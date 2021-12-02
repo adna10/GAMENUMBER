@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Risque&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+ <div id="entaranumber">
+    <div class="coeur">
+        <img src="peepo coeur.png" alt="">
+        <p><span id="tries">10</span>/10</p>
+    </div>
+  
+    <div id="center">
+        <p class="enter">Enter a number between 0 and 100 : </p>
+        <input id="inp" type="number">
+        <button onclick='guess()' class="butt" onclick="">GUESS</button>
+    </div>
+    <div class="coment">
+        <p id="coment"></p>
+    </div>
+ </div>
+
+
+
+
+
+ <div id="playgame">
+     <div class="play">
+        <P class="playpeepo">Peppo Guessing Number</P>
+        <img src="peeop2.png" alt="">
+     </div>
+     <div class="playbutt">
+         <a href=""><p>play</p></a>
+
+     </div>
+ </div>
+
+
+
+ <div id="wiin">
+    <div class="win" >
+      <p>you win</p>
+      <img src="peepo dance.gif" alt="">
+    </div>
+
+ </div>
+
+
+ <div id="gameover">
+     <div class="imag">
+      <img class="over" src="peepo1.png" alt="">
+      <p>GAME OVER</p>
+     </div>
+ </div>
+
+ <script>
+ 
+  var input_btn = document.getElementById('inp');
+  var message = document.getElementById('coment')
+  var rand = Math.floor(Math.random()*100);
+
+    var attempts = 10;
+    var total_attempts = document.getElementById('tries')
+
+  function guess(){
+
+  if(input_btn.value==rand){
+      message.innerHTML = 'bravo'
+  }
+  else if(input_btn.value>rand){
+    message.innerHTML = 'too big!'
+  }
+ else{
+     message.innerHTML = 'too small!'
+ }
+
+}
+
+
+
+ </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
