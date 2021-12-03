@@ -107,7 +107,7 @@ body{
     height: 250px;
     display: flex;
     flex-direction: column;
-    
+   
     align-items: center;
     border-style: solid;
     border-color: white;
@@ -118,6 +118,7 @@ body{
     margin-top: 10px;
     color: white;
     font-size: 40px;
+    cursor: pointer;
 
 }
 .play img{
@@ -132,6 +133,7 @@ body{
     position: absolute;
     background:#025573ce ;
     top: 360px;
+    cursor: pointer;
     margin-left: 130px;
     width: 350px;
     height: 80px;
