@@ -37,7 +37,7 @@
         <img src="peeop2.png" alt="">
      </div>
      <div class="playbutt">
-         <a href=""><p>play</p></a>
+         <a onclick="startGame()"><p>play</p></a>
 
      </div>
  </div>
@@ -69,15 +69,31 @@
   var total_attempts = document.getElementById('tries')
   var palying = document.getElementById('center')
   var GameOver = document.getElementById ('gameover')
+  var win = document.getElementById ('wiin')
+  var play = document.getElementById("playgame");
 
+  play.style.display = "block"
+  document.getElementById("coment1").style.display='none';
+  palying.style.display = 'none';
+
+function startGame(){
+    play.style.display = "none"
+  document.getElementById("coment1").style.display='block';
+  palying.style.display = 'flex';
+}
   function guess(){
 
   if(input_btn.value==rand){
       if (attempts >= 9){
-          message.innerHTML = "WOW you are a GENUIS"
+          message.innerHTML = "WOW you are a GENIS"
         }
       
-     else { message.innerHTML = 'bravo , you guessed the number after '+ (10-attempts) + 'attempts' } 
+    else { message.innerHTML = 'bravo , you guessed the number after '+ (10-attempts) + 'attempts' } 
+    win.style.display = 'block';
+    palying.style.display = 'none';
+    document.getElementById("coment1").style.display='none';
+    attempts=10;
+    total_attempts.innerHTML = attempts;
   }
   
   else
