@@ -12,7 +12,7 @@
 </head>
 <body>
  <div id="entaranumber">
-    <div class="coeur">
+    <div id="coeur">
         <img src="peepo coeur.png" alt="">
         <p><span id="tries">10</span>/10</p>
     </div>
@@ -22,7 +22,7 @@
         <input id="inp" type="number">
         <button onclick='guess()' class="butt" onclick="">GUESS</button>
     </div>
-    <div class="coment">
+    <div class="coment" id="coment1">
         <p id="coment"></p>
     </div>
  </div>
@@ -61,30 +61,49 @@
  </div>
 
  <script>
- 
-  var input_btn = document.getElementById('inp');
-  var message = document.getElementById('coment')
-  var rand = Math.floor(Math.random()*100);
 
-    var attempts = 10;
-    var total_attempts = document.getElementById('tries')
+  var rand = Math.floor(Math.random()*100);   
+  var input_btn = document.getElementById('inp');
+  var message = document.getElementById('coment'); 
+  var attempts = 10;
+  var total_attempts = document.getElementById('tries')
+  var palying = document.getElementById('center')
+  var GameOver = document.getElementById ('gameover')
 
   function guess(){
 
   if(input_btn.value==rand){
-      message.innerHTML = 'bravo'
+      if (attempts >= 9){
+          message.innerHTML = "WOW you are a GENUIS"
+        }
+      
+     else { message.innerHTML = 'bravo , you guessed the number after '+ (10-attempts) + 'attempts' } 
   }
-  else if(input_btn.value>rand){
-    message.innerHTML = 'too big!'
+  
+  else
+  { if(input_btn.value>rand){
+      attempts--;
+      total_attempts.innerHTML = attempts;
+      message.innerHTML = 'OH NO , Your guess is higher'
   }
- else{
-     message.innerHTML = 'too small!'
+ 
+  else{
+      attempts--;
+      total_attempts.innerHTML = attempts;
+     message.innerHTML = 'OH NO , Your guess is lower!'
  }
-
 }
-
-
-
+if (attempts==0){
+    
+    GameOver.style.display = 'block';
+    palying.style.display = 'none';
+    document.getElementById("coment1").style.display='none';
+    attempts=10;
+    total_attempts.innerHTML = attempts;
+    
+    
+}
+}
  </script>
 
 
